@@ -1,0 +1,20 @@
+.img-rb{
+    height: 40px;
+    width: 40px;
+}
+
+.img-flag{
+    height: 60px;
+    width: 60px;
+}
+
+.img-kart{
+    height: 80px;
+    width: 90px;
+}
+
+table#pos{
+    table-layout: fixed;
+    background-image: url('../../assets/images/track1.jpg');
+    background-size: auto 105px;
+  }

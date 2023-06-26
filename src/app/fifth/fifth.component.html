@@ -1,0 +1,48 @@
+<div class="card text-center">
+    <div class="card-body">
+        <h1>V</h1>
+        <h2>[Chat GPT]</h2>
+        <br />
+        <div>
+            How do you experience the product as a whole? 
+        </div>
+        <div>
+            Click on the option that relates better to your thoughts about the product
+        </div>
+        <br/>
+        <table class="table table-striped">
+            <tbody class="text-left">
+                <tr id="pregunta1">
+                    <ng-container *ngFor="let item of opcionesPregunta;">
+                        <td class="text-center">
+                            <input type="radio" id="{{'pipe1_'+item}}" name="pregunta1" (change)="guardarRespuesta(1,item)">
+                            <!--img id="{{'pipe1_'+item}}" class="img-rb" src="assets/images/kart_box.png" (click)="cambiarImagen(1,item)" /-->
+                        </td>
+                    </ng-container>
+                </tr>
+                <tr class="text-center">
+                    <td>-5</td>
+                    <td>-4</td>
+                    <td>-3</td>
+                    <td>-2</td>
+                    <td>-1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="alert alert-danger" *ngIf="isVisible">
+        You must answer all questions to continue
+    </div>
+    <div class="card-footer">
+        <div class="text-center btn-group">
+            <a class="btn btn-success" (click)="validarRespuestas()">Finish!</a>
+        </div>
+    </div>
+</div>
+

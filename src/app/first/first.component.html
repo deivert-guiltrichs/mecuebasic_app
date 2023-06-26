@@ -1,0 +1,102 @@
+<div class="card text-center">
+    <div class="card-body">
+        <h1>I</h1>
+        <h2>[Chat GPT]</h2>
+        <br />
+        <div>
+            Please click on the option that relates the more to your thoughts about the product
+        </div>
+        <br/>
+        <table class="table table-striped" style="table-layout: fixed;">
+            <thead>
+                <tr>
+                    <td style="width: 25%;"></td>
+                    <td style="width: 10,7%;">strongly disagree</td>
+                    <td style="width: 10,7%;">disagree</td>
+                    <td style="width: 10,7%;">somewhat disagree</td>
+                    <td style="width: 10,7%;">neither agree or disagree</td>
+                    <td style="width: 10,7%;">somewhat agree</td>
+                    <td style="width: 10,7%;">agree</td>
+                    <td style="width: 10,7%;">strongly agree</td>
+                </tr>
+            </thead>
+            <tbody class="text-left">
+                <tr id="pregunta1">
+                    <td>The product is easy to use.</td>
+                    <ng-container *ngFor="let item of opcionesPregunta;">
+                        <td class="text-center">
+                            <input type="radio" id="{{'pipe1_'+item}}" name="pregunta1" (change)="guardarRespuesta(1,item)">
+                            <!--img id="{{'pipe1_'+item}}" class="img-rb" src="assets/images/kart_box.png" (click)="cambiarImagen(1,item)" /-->
+                        </td>
+                    </ng-container>
+                </tr>
+                <tr id="pregunta2">
+                    <td>The functions of the product are exactly right for my goals.</td>
+                    <ng-container *ngFor="let item of opcionesPregunta;">
+                        <td class="text-center">
+                            <input type="radio" id="{{'pipe2_'+item}}" name="pregunta2" (change)="guardarRespuesta(2,item)">
+                            <!--img id="{{'pipe1_'+item}}" class="img-rb" src="assets/images/kart_box.png" (click)="cambiarImagen(1,item)" /-->
+                        </td>
+                    </ng-container>
+                </tr>
+                <tr id="pregunta3">
+                    <td>It is quickly apparent how to use the product.</td>
+                    <ng-container *ngFor="let item of opcionesPregunta;">
+                        <td class="text-center">
+                            <input type="radio" id="{{'pipe3_'+item}}" name="pregunta3" (change)="guardarRespuesta(3,item)">
+                            <!--img id="{{'pipe1_'+item}}" class="img-rb" src="assets/images/kart_box.png" (click)="cambiarImagen(1,item)" /-->
+                        </td>
+                    </ng-container>
+                </tr>
+                <tr  id="pregunta4">
+                    <td>I consider the product extremely useful.</td>
+                    <ng-container *ngFor="let item of opcionesPregunta;">
+                        <td class="text-center">
+                            <input type="radio" id="{{'pipe4_'+item}}" name="pregunta4" (change)="guardarRespuesta(4,item)">
+                            <!--img id="{{'pipe1_'+item}}" class="img-rb" src="assets/images/kart_box.png" (click)="cambiarImagen(1,item)" /-->
+                        </td>
+                    </ng-container>
+                </tr>
+                <tr id="pregunta5">
+                    <td>The operating procedures of the product are simple to understand.</td>
+                    <ng-container *ngFor="let item of opcionesPregunta;">
+                        <td class="text-center">
+                            <input type="radio" id="{{'pipe5_'+item}}" name="pregunta5" (change)="guardarRespuesta(5,item)">
+                            <!--img id="{{'pipe1_'+item}}" class="img-rb" src="assets/images/kart_box.png" (click)="cambiarImagen(1,item)" /-->
+                        </td>
+                    </ng-container>
+                </tr>
+                <tr id="pregunta6">
+                    <td>With the help of this product I will achieve my goals. </td>
+                    <ng-container *ngFor="let item of opcionesPregunta;">
+                        <td class="text-center">
+                            <input type="radio" id="{{'pipe6_'+item}}" name="pregunta6" (change)="guardarRespuesta(6,item)">
+                            <!--img id="{{'pipe1_'+item}}" class="img-rb" src="assets/images/kart_box.png" (click)="cambiarImagen(1,item)" /-->
+                        </td>
+                    </ng-container>
+                </tr>
+            </tbody>
+        </table>
+        <!--table id="pos" class="table">
+            <tr>
+                <td id="meta"></td>
+                <td id="flag"><img id="lakitu" class="img-flag" src="assets/images/Lakitu.png" /></td>
+                <td id="pos0"><img id="luigi" class="img-kart" src="assets/images/luigi.png" /></td>
+                <td id="pos1"></td>
+                <td id="pos2"></td>
+                <td id="pos3"></td>
+                <td id="pos4"></td>
+                <td id="pos5"><img id="mario" class="img-kart" src="assets/images/mariokart.png" /></td>
+            </tr>
+        </table-->
+    </div>
+    <div class="alert alert-danger" *ngIf="isVisible">
+        You must answer all questions to continue
+    </div>
+    <div class="card-footer">
+        <div class="text-center btn-group">
+            <!--a class="btn btn-primary" routerLink="/frontpage">< Back</a-->
+            <a class="btn btn-primary" (click)="validarRespuestas()">Next ></a>
+        </div>
+    </div>
+</div>

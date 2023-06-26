@@ -1,0 +1,89 @@
+<div class="card text-center">
+    <div class="card-body">
+        <h1>IV</h1>
+        <h2>[Chat GPT]</h2>
+        <br />
+        <div>
+            Please click on the option that relates better to your thoughts about the product
+        </div>
+        <br/>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>strongly disagree</td>
+                    <td>disagree</td>
+                    <td>somewhat disagree</td>
+                    <td>neither agree or disagree</td>
+                    <td>somewhat agree</td>
+                    <td>agree</td>
+                    <td>strongly agree</td>
+                </tr>
+            </thead>
+            <tbody class="text-left">
+                <tr id="pregunta1">
+                    <td>If I could, I would use the product daily.  </td>
+                    <ng-container *ngFor="let item of opcionesPregunta;">
+                        <td class="text-center">
+                            <input type="radio" id="{{'pipe1_'+item}}" name="pregunta1" (change)="guardarRespuesta(1,item)">
+                            <!--img id="{{'pipe1_'+item}}" class="img-rb" src="assets/images/kart_box.png" (click)="cambiarImagen(1,item)" /-->
+                        </td>
+                    </ng-container>
+                </tr>
+                <tr id="pregunta2">
+                    <td>I would not swap this product for any other.  </td>
+                    <ng-container *ngFor="let item of opcionesPregunta;">
+                        <td class="text-center">
+                            <input type="radio" id="{{'pipe2_'+item}}" name="pregunta2" (change)="guardarRespuesta(2,item)">
+                            <!--img id="{{'pipe1_'+item}}" class="img-rb" src="assets/images/kart_box.png" (click)="cambiarImagen(1,item)" /-->
+                        </td>
+                    </ng-container>
+                </tr>
+                <tr id="pregunta3">
+                    <td>I can hardly wait to use the product again.  </td>
+                    <ng-container *ngFor="let item of opcionesPregunta;">
+                        <td class="text-center">
+                            <input type="radio" id="{{'pipe3_'+item}}" name="pregunta3" (change)="guardarRespuesta(3,item)">
+                            <!--img id="{{'pipe1_'+item}}" class="img-rb" src="assets/images/kart_box.png" (click)="cambiarImagen(1,item)" /-->
+                        </td>
+                    </ng-container>
+                </tr>
+                <tr  id="pregunta4">
+                    <td>In comparison to this product, no others come close.  </td>
+                    <ng-container *ngFor="let item of opcionesPregunta;">
+                        <td class="text-center">
+                            <input type="radio" id="{{'pipe4_'+item}}" name="pregunta4" (change)="guardarRespuesta(4,item)">
+                            <!--img id="{{'pipe1_'+item}}" class="img-rb" src="assets/images/kart_box.png" (click)="cambiarImagen(1,item)" /-->
+                        </td>
+                    </ng-container>
+                </tr>
+                <tr id="pregunta5">
+                    <td>I would get exactly this product for myself (again) at anytime.  </td>
+                    <ng-container *ngFor="let item of opcionesPregunta;">
+                        <td class="text-center">
+                            <input type="radio" id="{{'pipe5_'+item}}" name="pregunta5" (change)="guardarRespuesta(5,item)">
+                            <!--img id="{{'pipe1_'+item}}" class="img-rb" src="assets/images/kart_box.png" (click)="cambiarImagen(1,item)" /-->
+                        </td>
+                    </ng-container>
+                </tr>
+                <tr id="pregunta6">
+                    <td>When using the product, I lose track of time.  </td>
+                    <ng-container *ngFor="let item of opcionesPregunta;">
+                        <td class="text-center">
+                            <input type="radio" id="{{'pipe6_'+item}}" name="pregunta6" (change)="guardarRespuesta(6,item)">
+                            <!--img id="{{'pipe1_'+item}}" class="img-rb" src="assets/images/kart_box.png" (click)="cambiarImagen(1,item)" /-->
+                        </td>
+                    </ng-container>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="alert alert-danger" *ngIf="isVisible">
+        You must answer all questions to continue
+    </div>
+    <div class="card-footer">
+        <div class="text-center btn-group">
+            <a class="btn btn-primary" (click)="validarRespuestas()">Next ></a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="card text-center">
+    <div class="card-body">
+        <h1>[Evaluation of interactive products]</h1>
+        <h2>meCUE 2.0 questionnaire</h2>
+        <br />
+        <div class="text-left">
+            <p>This questionnaire serves to assess how you experience the product <b>Chat GPT</b>.</p>
+            <p>In case that you don't know what Chat GPT is, you could use this video to learn about it <a href="https://www.youtube.com/watch?v=AXn2XVLf7d0">here</a></p>
+            <p>On the following pages, there are a number of statements that you can use to judge your experience.</p>
+            <p>Please, express the degree of your agreement with each statement by clicking the according option.</p>
+            <p>Decide spontaneously and without long contemplation to convey your first impression. Please judge each statement even if you feel that it does not completely match your experience.</p>
+            <p>There are no right or wrong answers – all that counts is your personal opinion!</p>
+            <p>Before you start, we need to know your age and your gender:</p>
+            <b>Your gender (*):</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select [(ngModel)]="selectedOptionGender">
+                <option value="Choose">Select...</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="NotAnswer">I'd rather not answer</option>
+            </select>
+            <br><br>
+            <b>Your age (*):</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            <select [(ngModel)]="selectedOptionAge">
+                <option value="Choose">Select...</option>
+                <option value="18">18-29</option>
+                <option value="30">30-39</option>
+                <option value="40">40-49</option>
+                <option value="50">50-59</option>
+                <option value="60">60 o más</option>
+              </select>
+            <br/>
+            <br>
+            <div  class="alert alert-danger" *ngIf="isVisible">
+                You must complete all mandatory fields (*) to continue
+            </div>
+            <div class="text-center">
+                <a class="btn btn-success" (click)="guardarInicio()">Start!</a>
+            </div>
+        </div>
+    </div>
+</div>
+
